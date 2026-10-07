@@ -1,0 +1,39 @@
+src/
+├── components/
+│   ├── ui/                    <-- Peças atómicas reutilizáveis em qualquer lado
+│   │   ├── Button.jsx         (Botão padrão com variantes: primário, perigo, outline)
+│   │   ├── Input.jsx          (Input com label e estilo padrão do Tailwind)
+│   │   └── Card.jsx           (Caixa branca com sombra e padding padronizados)
+│   │
+│   ├── layout/                <-- Estrutura da página
+│   │   └── Navbar.jsx         (Cabeçalho e navegação entre abas)
+│   │
+│   ├── editor/                <-- O ecossistema do Orçamento / Editor
+│   │   ├── InvoiceEditor.jsx  (O container que junta o lado esquerdo e o direito)
+│   │   ├── form/              <-- Partes isoladas do formulário
+│   │   │   ├── DocumentInfo.jsx   (Nº Orçamento, Data, Validade)
+│   │   │   ├── ClientInfo.jsx     (Nome, NIF, Morada do cliente)
+│   │   │   ├── LineItems.jsx      (Lista de linhas de trabalho)
+│   │   │   ├── ItemRow.jsx        (Uma linha individual com o toggle Fixo vs Qtd)
+│   │   │   └── TaxAndNotes.jsx    (Toggle do IVA e Observações)
+│   │   └── preview/           <-- O ecossistema da Folha A4
+│   │       ├── InvoiceDocument.jsx (A folha A4 completa com margens e estilo print)
+│   │       ├── DocHeader.jsx       (Logótipo/Nome da Carpintaria e dados)
+│   │       ├── DocTable.jsx        (Tabela de artigos com as colunas)
+│   │       └── DocSummary.jsx      (Subtotal, IVA e Total destacados)
+│   │
+│   └── history/               <-- O ecossistema de Gestão / Histórico
+│       ├── InvoiceHistory.jsx (Página de listagem)
+│       └── HistoryRow.jsx     (Linha da tabela com ações: editar, PDF, apagar)
+│
+├── hooks/                     <-- O cérebro da aplicação (Zero HTML, só lógica)
+│   ├── useInvoice.js          (Gere a fatura atual e funções de adicionar/remover linha)
+│   ├── useInvoiceHistory.js   (Lê e grava no localStorage, filtra, apaga)
+│   └── useInvoiceTotals.js    (Calcula Subtotal, IVA e Total com precisão decimal)
+│
+├── types/ ou constants/       <-- Dados base
+│   └── defaults.js            (O modelo em branco de um orçamento)
+│
+├── App.jsx                    <-- Fica com menos de 30 linhas! Só orquestra a navegação.
+├── main.jsx
+└── index.css
