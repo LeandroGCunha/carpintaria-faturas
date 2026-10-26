@@ -62,7 +62,11 @@ export default function HistoricoModal({
     const termo = filtro.toLowerCase();
     const nome = (item.clienteNome || "").toLowerCase();
     const num = (item.numero || "").toLowerCase();
-    return nome.includes(termo) || num.includes(termo);
+    const tags = Array.isArray(item.tags)
+      ? item.tags.join(" ").toLowerCase()
+      : "";
+
+    return nome.includes(termo) || num.includes(termo) || tags.includes(termo);
   });
 
   if (!aberto) return null;
@@ -144,6 +148,19 @@ export default function HistoricoModal({
                     })}
                   </span>
                 </div>
+
+                {Array.isArray(item.tags) && item.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-1">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-100"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 {/* Detalhes de Rodapé */}
                 <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1 border-t border-slate-100">

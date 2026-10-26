@@ -78,7 +78,7 @@ export default function DocHeader({ orcamento }) {
         {/* Linha 3: Contacto da Empresa vs Contacto do Cliente */}
         <div className="grid grid-cols-12 gap-4 items-baseline min-h-[1.5rem]">
           <div className="col-span-6 text-slate-600">
-            Contacto: 256 926 ... / 910 000 000 | carpingomes@hotmail.com
+            Contacto: 933408983 | carpingomes@hotmail.com
           </div>
           <div className="col-span-6 text-right text-slate-600">
             {temCliente && orcamento.clienteTelefone?.trim() && (

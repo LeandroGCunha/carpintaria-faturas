@@ -59,7 +59,7 @@ export default function InvoiceEditor({
   const [visaoGeral, setVisaoGeral] = useState(false);
 
   return (
-    <div className="h-screen w-full flex flex-col bg-slate-100 font-sans overflow-hidden relative">
+    <div className="editor-shell h-screen w-full flex flex-col bg-slate-100 font-sans overflow-hidden relative">
       {/* Área Central com 2 Colunas de Scroll Independente */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
         {/* COLUNA ESQUERDA: Formulário com scroll independente */}
@@ -156,9 +156,9 @@ export default function InvoiceEditor({
         </div>
 
         {/* COLUNA DIREITA: Folha A4 com scroll independente e suporte a escala */}
-        <div className="lg:col-span-6 h-full overflow-y-auto p-6 bg-slate-300/40 flex justify-center items-start print:p-0 print:bg-white print:overflow-visible">
+        <div className="print-document-area lg:col-span-6 h-full overflow-y-auto p-6 bg-slate-300/40 flex justify-center items-start print:p-0 print:bg-white print:overflow-visible">
           <div
-            className={`transition-transform duration-300 origin-top flex justify-center w-full ${
+            className={`print-document-wrapper transition-transform duration-300 origin-top flex justify-center w-full ${
               visaoGeral ? "scale-[0.58] lg:scale-[0.62] -mb-96" : "scale-100"
             }`}
           >

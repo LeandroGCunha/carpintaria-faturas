@@ -10,7 +10,7 @@ export default function DocSummary({
   const total = subtotal + valorIva;
 
   return (
-    <div className="mt-6 pt-4 border-t border-slate-200">
+    <div className="invoice-summary pt-4 border-t border-slate-200">
       <div className="flex justify-between items-start gap-8">
         {/* Observações / Termos */}
         <div className="flex-1 text-xs text-slate-600">

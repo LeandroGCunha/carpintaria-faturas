@@ -106,7 +106,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 font-sans">
+    <div className="app-shell min-h-screen bg-slate-100 font-sans">
       <InvoiceEditor
         orcamento={orcamento}
         subtotal={subtotal}

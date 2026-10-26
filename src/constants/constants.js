@@ -17,13 +17,16 @@ export const ORCAMENTO_PADRAO = {
   // DocumentInfo
   numero: "ORC-2026/01",
   data: new Date().toISOString().split("T")[0],
-  validadeDias: 30,
+  validadeDias: 150,
 
   // ClientInfo
   clienteNome: "",
   clienteNif: "",
   clienteTelefone: "",
   clienteMorada: "",
+
+  // Tags
+  tags: [],
 
   // LineItems
   itens: [
@@ -43,3 +46,14 @@ export const ORCAMENTO_PADRAO = {
   observacoes:
     "Condições de pagamento: 50% na adjudicação e 50% na conclusão dos trabalhos.",
 };
+
+export const TAGS_SUGERIDAS = [
+  "Cozinha",
+  "Roupeiro",
+  "Portas",
+  "WC",
+  "Escadas",
+  "Telheiro",
+  "Moveis",
+  "Rodapé",
+];
