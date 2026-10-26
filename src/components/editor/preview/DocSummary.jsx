@@ -1,7 +1,12 @@
 import React from "react";
 
-export default function DocSummary({ subtotal, taxaIva, observacoes }) {
-  const valorIva = (subtotal * taxaIva) / 100;
+export default function DocSummary({
+  subtotal,
+  aplicarIva,
+  taxaIva,
+  observacoes,
+}) {
+  const valorIva = aplicarIva ? (subtotal * taxaIva) / 100 : 0;
   const total = subtotal + valorIva;
 
   return (
@@ -27,12 +32,19 @@ export default function DocSummary({ subtotal, taxaIva, observacoes }) {
             </span>
           </div>
 
-          <div className="flex justify-between text-slate-600">
-            <span>IVA ({taxaIva}%):</span>
-            <span className="font-semibold text-slate-900 font-mono">
-              {valorIva.toFixed(2)} €
-            </span>
-          </div>
+          {aplicarIva ? (
+            <div className="flex justify-between text-slate-600">
+              <span>IVA ({taxaIva}%):</span>
+              <span className="font-semibold text-slate-900 font-mono">
+                {valorIva.toFixed(2)} €
+              </span>
+            </div>
+          ) : (
+            <div className="flex justify-between text-slate-600">
+              <span>IVA:</span>
+              <span className="font-semibold text-slate-900">Sem IVA</span>
+            </div>
+          )}
 
           <div className="flex justify-between items-baseline pt-2 border-t-2 border-slate-900 text-sm">
             <span className="font-black text-slate-900 uppercase">Total:</span>

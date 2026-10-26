@@ -13,6 +13,7 @@ export default function InvoiceDocument({ orcamento, subtotal }) {
 
       <DocSummary
         subtotal={subtotal}
+        aplicarIva={orcamento.aplicarIva}
         taxaIva={orcamento.taxaIva}
         observacoes={orcamento.observacoes}
       />

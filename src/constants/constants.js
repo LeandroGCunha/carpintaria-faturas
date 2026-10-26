@@ -38,6 +38,7 @@ export const ORCAMENTO_PADRAO = {
   ],
 
   // TaxAndNotes
+  aplicarIva: false,
   taxaIva: 23,
   observacoes:
     "Condições de pagamento: 50% na adjudicação e 50% na conclusão dos trabalhos.",

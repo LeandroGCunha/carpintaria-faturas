@@ -5,6 +5,7 @@ export const orcamentosService = {
   async listar() {
     return await pb.collection("orcamentos").getFullList({
       sort: "-created",
+      fields: "id,numero,clienteNome,data,total,aplicarIva,tags,created",
     });
   },
 
